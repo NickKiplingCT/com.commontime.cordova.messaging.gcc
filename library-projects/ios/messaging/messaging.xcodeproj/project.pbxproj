@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EB3A8DB1D479148007BE61C /* CTConsoleLogDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8881D479148007BE61C /* CTConsoleLogDestination.m */; };
+		1EB3A8DC1D479148007BE61C /* CTFileLogDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A88A1D479148007BE61C /* CTFileLogDestination.m */; };
+		1EB3A8DD1D479148007BE61C /* CTLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A88D1D479148007BE61C /* CTLogger.m */; };
+		1EB3A8DE1D479148007BE61C /* CTLogLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A88F1D479148007BE61C /* CTLogLevel.m */; };
+		1EB3A8DF1D479148007BE61C /* CTLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8911D479148007BE61C /* CTLogManager.m */; };
+		1EB3A8E01D479148007BE61C /* CTLogMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8931D479148007BE61C /* CTLogMessage.m */; };
+		1EB3A8E11D479148007BE61C /* CTLogPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8951D479148007BE61C /* CTLogPlugin.m */; };
+		1EB3A8E21D479148007BE61C /* CTNAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8971D479148007BE61C /* CTNAttachment.m */; };
+		1EB3A8E31D479148007BE61C /* CTNAzureConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8991D479148007BE61C /* CTNAzureConnection.m */; };
+		1EB3A8E41D479148007BE61C /* CTNAzureConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A89B1D479148007BE61C /* CTNAzureConstants.m */; };
+		1EB3A8E51D479148007BE61C /* CTNAzureMessageReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A89D1D479148007BE61C /* CTNAzureMessageReceiver.m */; };
+		1EB3A8E61D479148007BE61C /* CTNAzureMessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A89F1D479148007BE61C /* CTNAzureMessageSender.m */; };
+		1EB3A8E71D479148007BE61C /* CTNAzureNotificationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8A11D479148007BE61C /* CTNAzureNotificationPlugin.m */; };
+		1EB3A8E81D479148007BE61C /* CTNAzureNotificationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8A31D479148007BE61C /* CTNAzureNotificationProvider.m */; };
+		1EB3A8E91D479148007BE61C /* CTNAzureStorageBlobAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8A51D479148007BE61C /* CTNAzureStorageBlobAttachment.m */; };
+		1EB3A8EA1D479148007BE61C /* CTNAzureStorageBlobReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8A71D479148007BE61C /* CTNAzureStorageBlobReference.m */; };
+		1EB3A8EB1D479148007BE61C /* CTNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8A91D479148007BE61C /* CTNConstants.m */; };
+		1EB3A8EC1D479148007BE61C /* CTNContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8AB1D479148007BE61C /* CTNContent.m */; };
+		1EB3A8ED1D479148007BE61C /* CTNContentReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8AD1D479148007BE61C /* CTNContentReference.m */; };
+		1EB3A8EE1D479148007BE61C /* CTNFileReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8AF1D479148007BE61C /* CTNFileReference.m */; };
+		1EB3A8EF1D479148007BE61C /* CTNMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8B11D479148007BE61C /* CTNMessage.m */; };
+		1EB3A8F01D479148007BE61C /* CTNMessageConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8B31D479148007BE61C /* CTNMessageConnector.m */; };
+		1EB3A8F11D479148007BE61C /* CTNMessageReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8B51D479148007BE61C /* CTNMessageReceiver.m */; };
+		1EB3A8F21D479148007BE61C /* CTNMessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8B71D479148007BE61C /* CTNMessageSender.m */; };
+		1EB3A8F31D479148007BE61C /* CTNMessageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8B91D479148007BE61C /* CTNMessageStore.m */; };
+		1EB3A8F41D479148007BE61C /* CTNNotificationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8BB1D479148007BE61C /* CTNNotificationPlugin.m */; };
+		1EB3A8F51D479148007BE61C /* CTNNotificationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8BD1D479148007BE61C /* CTNNotificationProvider.m */; };
+		1EB3A8F61D479148007BE61C /* CTNNotificationProviderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8BF1D479148007BE61C /* CTNNotificationProviderManager.m */; };
+		1EB3A8F71D479148007BE61C /* CTNRestMessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8C11D479148007BE61C /* CTNRestMessageSender.m */; };
+		1EB3A8F81D479148007BE61C /* CTNRestNotificationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8C31D479148007BE61C /* CTNRestNotificationPlugin.m */; };
+		1EB3A8F91D479148007BE61C /* CTNRestNotificationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8C51D479148007BE61C /* CTNRestNotificationProvider.m */; };
+		1EB3A8FA1D479148007BE61C /* CTNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8C71D479148007BE61C /* CTNUtility.m */; };
+		1EB3A8FB1D479148007BE61C /* CTNZumoAttachmentUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8C91D479148007BE61C /* CTNZumoAttachmentUploader.m */; };
+		1EB3A8FC1D479148007BE61C /* CTNZumoMessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8CB1D479148007BE61C /* CTNZumoMessageSender.m */; };
+		1EB3A8FD1D479148007BE61C /* CTNZumoNotificationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8CD1D479148007BE61C /* CTNZumoNotificationPlugin.m */; };
+		1EB3A8FE1D479148007BE61C /* CTNZumoNotificationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8CF1D479148007BE61C /* CTNZumoNotificationProvider.m */; };
+		1EB3A8FF1D479148007BE61C /* HTTPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8D11D479148007BE61C /* HTTPConstants.m */; };
+		1EB3A9011D479148007BE61C /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB3A8D31D479148007BE61C /* MicrosoftAzureMobile.framework */; };
+		1EB3A9021D479148007BE61C /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8D51D479148007BE61C /* NSDictionary+JSON.m */; };
+		1EB3A9031D479148007BE61C /* SQLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8D71D479148007BE61C /* SQLDatabase.m */; };
+		1EB3A9041D479148007BE61C /* SQLStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3A8D91D479148007BE61C /* SQLStatement.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1EB3A8791D479111007BE61C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1EB3A87B1D479111007BE61C /* libmessaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmessaging.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EB3A8871D479148007BE61C /* CTConsoleLogDestination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTConsoleLogDestination.h; path = ../../../../src/ios/CTConsoleLogDestination.h; sourceTree = "<group>"; };
+		1EB3A8881D479148007BE61C /* CTConsoleLogDestination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTConsoleLogDestination.m; path = ../../../../src/ios/CTConsoleLogDestination.m; sourceTree = "<group>"; };
+		1EB3A8891D479148007BE61C /* CTFileLogDestination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTFileLogDestination.h; path = ../../../../src/ios/CTFileLogDestination.h; sourceTree = "<group>"; };
+		1EB3A88A1D479148007BE61C /* CTFileLogDestination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTFileLogDestination.m; path = ../../../../src/ios/CTFileLogDestination.m; sourceTree = "<group>"; };
+		1EB3A88B1D479148007BE61C /* CTLogDestination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLogDestination.h; path = ../../../../src/ios/CTLogDestination.h; sourceTree = "<group>"; };
+		1EB3A88C1D479148007BE61C /* CTLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLogger.h; path = ../../../../src/ios/CTLogger.h; sourceTree = "<group>"; };
+		1EB3A88D1D479148007BE61C /* CTLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLogger.m; path = ../../../../src/ios/CTLogger.m; sourceTree = "<group>"; };
+		1EB3A88E1D479148007BE61C /* CTLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLogLevel.h; path = ../../../../src/ios/CTLogLevel.h; sourceTree = "<group>"; };
+		1EB3A88F1D479148007BE61C /* CTLogLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLogLevel.m; path = ../../../../src/ios/CTLogLevel.m; sourceTree = "<group>"; };
+		1EB3A8901D479148007BE61C /* CTLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLogManager.h; path = ../../../../src/ios/CTLogManager.h; sourceTree = "<group>"; };
+		1EB3A8911D479148007BE61C /* CTLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLogManager.m; path = ../../../../src/ios/CTLogManager.m; sourceTree = "<group>"; };
+		1EB3A8921D479148007BE61C /* CTLogMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLogMessage.h; path = ../../../../src/ios/CTLogMessage.h; sourceTree = "<group>"; };
+		1EB3A8931D479148007BE61C /* CTLogMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLogMessage.m; path = ../../../../src/ios/CTLogMessage.m; sourceTree = "<group>"; };
+		1EB3A8941D479148007BE61C /* CTLogPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLogPlugin.h; path = ../../../../src/ios/CTLogPlugin.h; sourceTree = "<group>"; };
+		1EB3A8951D479148007BE61C /* CTLogPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLogPlugin.m; path = ../../../../src/ios/CTLogPlugin.m; sourceTree = "<group>"; };
+		1EB3A8961D479148007BE61C /* CTNAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAttachment.h; path = ../../../../src/ios/CTNAttachment.h; sourceTree = "<group>"; };
+		1EB3A8971D479148007BE61C /* CTNAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAttachment.m; path = ../../../../src/ios/CTNAttachment.m; sourceTree = "<group>"; };
+		1EB3A8981D479148007BE61C /* CTNAzureConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAzureConnection.h; path = ../../../../src/ios/CTNAzureConnection.h; sourceTree = "<group>"; };
+		1EB3A8991D479148007BE61C /* CTNAzureConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAzureConnection.m; path = ../../../../src/ios/CTNAzureConnection.m; sourceTree = "<group>"; };
+		1EB3A89A1D479148007BE61C /* CTNAzureConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAzureConstants.h; path = ../../../../src/ios/CTNAzureConstants.h; sourceTree = "<group>"; };
+		1EB3A89B1D479148007BE61C /* CTNAzureConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAzureConstants.m; path = ../../../../src/ios/CTNAzureConstants.m; sourceTree = "<group>"; };
+		1EB3A89C1D479148007BE61C /* CTNAzureMessageReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAzureMessageReceiver.h; path = ../../../../src/ios/CTNAzureMessageReceiver.h; sourceTree = "<group>"; };
+		1EB3A89D1D479148007BE61C /* CTNAzureMessageReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAzureMessageReceiver.m; path = ../../../../src/ios/CTNAzureMessageReceiver.m; sourceTree = "<group>"; };
+		1EB3A89E1D479148007BE61C /* CTNAzureMessageSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAzureMessageSender.h; path = ../../../../src/ios/CTNAzureMessageSender.h; sourceTree = "<group>"; };
+		1EB3A89F1D479148007BE61C /* CTNAzureMessageSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAzureMessageSender.m; path = ../../../../src/ios/CTNAzureMessageSender.m; sourceTree = "<group>"; };
+		1EB3A8A01D479148007BE61C /* CTNAzureNotificationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAzureNotificationPlugin.h; path = ../../../../src/ios/CTNAzureNotificationPlugin.h; sourceTree = "<group>"; };
+		1EB3A8A11D479148007BE61C /* CTNAzureNotificationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAzureNotificationPlugin.m; path = ../../../../src/ios/CTNAzureNotificationPlugin.m; sourceTree = "<group>"; };
+		1EB3A8A21D479148007BE61C /* CTNAzureNotificationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAzureNotificationProvider.h; path = ../../../../src/ios/CTNAzureNotificationProvider.h; sourceTree = "<group>"; };
+		1EB3A8A31D479148007BE61C /* CTNAzureNotificationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAzureNotificationProvider.m; path = ../../../../src/ios/CTNAzureNotificationProvider.m; sourceTree = "<group>"; };
+		1EB3A8A41D479148007BE61C /* CTNAzureStorageBlobAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAzureStorageBlobAttachment.h; path = ../../../../src/ios/CTNAzureStorageBlobAttachment.h; sourceTree = "<group>"; };
+		1EB3A8A51D479148007BE61C /* CTNAzureStorageBlobAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAzureStorageBlobAttachment.m; path = ../../../../src/ios/CTNAzureStorageBlobAttachment.m; sourceTree = "<group>"; };
+		1EB3A8A61D479148007BE61C /* CTNAzureStorageBlobReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNAzureStorageBlobReference.h; path = ../../../../src/ios/CTNAzureStorageBlobReference.h; sourceTree = "<group>"; };
+		1EB3A8A71D479148007BE61C /* CTNAzureStorageBlobReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNAzureStorageBlobReference.m; path = ../../../../src/ios/CTNAzureStorageBlobReference.m; sourceTree = "<group>"; };
+		1EB3A8A81D479148007BE61C /* CTNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNConstants.h; path = ../../../../src/ios/CTNConstants.h; sourceTree = "<group>"; };
+		1EB3A8A91D479148007BE61C /* CTNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNConstants.m; path = ../../../../src/ios/CTNConstants.m; sourceTree = "<group>"; };
+		1EB3A8AA1D479148007BE61C /* CTNContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNContent.h; path = ../../../../src/ios/CTNContent.h; sourceTree = "<group>"; };
+		1EB3A8AB1D479148007BE61C /* CTNContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNContent.m; path = ../../../../src/ios/CTNContent.m; sourceTree = "<group>"; };
+		1EB3A8AC1D479148007BE61C /* CTNContentReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNContentReference.h; path = ../../../../src/ios/CTNContentReference.h; sourceTree = "<group>"; };
+		1EB3A8AD1D479148007BE61C /* CTNContentReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNContentReference.m; path = ../../../../src/ios/CTNContentReference.m; sourceTree = "<group>"; };
+		1EB3A8AE1D479148007BE61C /* CTNFileReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNFileReference.h; path = ../../../../src/ios/CTNFileReference.h; sourceTree = "<group>"; };
+		1EB3A8AF1D479148007BE61C /* CTNFileReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNFileReference.m; path = ../../../../src/ios/CTNFileReference.m; sourceTree = "<group>"; };
+		1EB3A8B01D479148007BE61C /* CTNMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNMessage.h; path = ../../../../src/ios/CTNMessage.h; sourceTree = "<group>"; };
+		1EB3A8B11D479148007BE61C /* CTNMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNMessage.m; path = ../../../../src/ios/CTNMessage.m; sourceTree = "<group>"; };
+		1EB3A8B21D479148007BE61C /* CTNMessageConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNMessageConnector.h; path = ../../../../src/ios/CTNMessageConnector.h; sourceTree = "<group>"; };
+		1EB3A8B31D479148007BE61C /* CTNMessageConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNMessageConnector.m; path = ../../../../src/ios/CTNMessageConnector.m; sourceTree = "<group>"; };
+		1EB3A8B41D479148007BE61C /* CTNMessageReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNMessageReceiver.h; path = ../../../../src/ios/CTNMessageReceiver.h; sourceTree = "<group>"; };
+		1EB3A8B51D479148007BE61C /* CTNMessageReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNMessageReceiver.m; path = ../../../../src/ios/CTNMessageReceiver.m; sourceTree = "<group>"; };
+		1EB3A8B61D479148007BE61C /* CTNMessageSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNMessageSender.h; path = ../../../../src/ios/CTNMessageSender.h; sourceTree = "<group>"; };
+		1EB3A8B71D479148007BE61C /* CTNMessageSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNMessageSender.m; path = ../../../../src/ios/CTNMessageSender.m; sourceTree = "<group>"; };
+		1EB3A8B81D479148007BE61C /* CTNMessageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNMessageStore.h; path = ../../../../src/ios/CTNMessageStore.h; sourceTree = "<group>"; };
+		1EB3A8B91D479148007BE61C /* CTNMessageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNMessageStore.m; path = ../../../../src/ios/CTNMessageStore.m; sourceTree = "<group>"; };
+		1EB3A8BA1D479148007BE61C /* CTNNotificationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNNotificationPlugin.h; path = ../../../../src/ios/CTNNotificationPlugin.h; sourceTree = "<group>"; };
+		1EB3A8BB1D479148007BE61C /* CTNNotificationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNNotificationPlugin.m; path = ../../../../src/ios/CTNNotificationPlugin.m; sourceTree = "<group>"; };
+		1EB3A8BC1D479148007BE61C /* CTNNotificationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNNotificationProvider.h; path = ../../../../src/ios/CTNNotificationProvider.h; sourceTree = "<group>"; };
+		1EB3A8BD1D479148007BE61C /* CTNNotificationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNNotificationProvider.m; path = ../../../../src/ios/CTNNotificationProvider.m; sourceTree = "<group>"; };
+		1EB3A8BE1D479148007BE61C /* CTNNotificationProviderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNNotificationProviderManager.h; path = ../../../../src/ios/CTNNotificationProviderManager.h; sourceTree = "<group>"; };
+		1EB3A8BF1D479148007BE61C /* CTNNotificationProviderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNNotificationProviderManager.m; path = ../../../../src/ios/CTNNotificationProviderManager.m; sourceTree = "<group>"; };
+		1EB3A8C01D479148007BE61C /* CTNRestMessageSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNRestMessageSender.h; path = ../../../../src/ios/CTNRestMessageSender.h; sourceTree = "<group>"; };
+		1EB3A8C11D479148007BE61C /* CTNRestMessageSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNRestMessageSender.m; path = ../../../../src/ios/CTNRestMessageSender.m; sourceTree = "<group>"; };
+		1EB3A8C21D479148007BE61C /* CTNRestNotificationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNRestNotificationPlugin.h; path = ../../../../src/ios/CTNRestNotificationPlugin.h; sourceTree = "<group>"; };
+		1EB3A8C31D479148007BE61C /* CTNRestNotificationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNRestNotificationPlugin.m; path = ../../../../src/ios/CTNRestNotificationPlugin.m; sourceTree = "<group>"; };
+		1EB3A8C41D479148007BE61C /* CTNRestNotificationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNRestNotificationProvider.h; path = ../../../../src/ios/CTNRestNotificationProvider.h; sourceTree = "<group>"; };
+		1EB3A8C51D479148007BE61C /* CTNRestNotificationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNRestNotificationProvider.m; path = ../../../../src/ios/CTNRestNotificationProvider.m; sourceTree = "<group>"; };
+		1EB3A8C61D479148007BE61C /* CTNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNUtility.h; path = ../../../../src/ios/CTNUtility.h; sourceTree = "<group>"; };
+		1EB3A8C71D479148007BE61C /* CTNUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNUtility.m; path = ../../../../src/ios/CTNUtility.m; sourceTree = "<group>"; };
+		1EB3A8C81D479148007BE61C /* CTNZumoAttachmentUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNZumoAttachmentUploader.h; path = ../../../../src/ios/CTNZumoAttachmentUploader.h; sourceTree = "<group>"; };
+		1EB3A8C91D479148007BE61C /* CTNZumoAttachmentUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNZumoAttachmentUploader.m; path = ../../../../src/ios/CTNZumoAttachmentUploader.m; sourceTree = "<group>"; };
+		1EB3A8CA1D479148007BE61C /* CTNZumoMessageSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNZumoMessageSender.h; path = ../../../../src/ios/CTNZumoMessageSender.h; sourceTree = "<group>"; };
+		1EB3A8CB1D479148007BE61C /* CTNZumoMessageSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNZumoMessageSender.m; path = ../../../../src/ios/CTNZumoMessageSender.m; sourceTree = "<group>"; };
+		1EB3A8CC1D479148007BE61C /* CTNZumoNotificationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNZumoNotificationPlugin.h; path = ../../../../src/ios/CTNZumoNotificationPlugin.h; sourceTree = "<group>"; };
+		1EB3A8CD1D479148007BE61C /* CTNZumoNotificationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNZumoNotificationPlugin.m; path = ../../../../src/ios/CTNZumoNotificationPlugin.m; sourceTree = "<group>"; };
+		1EB3A8CE1D479148007BE61C /* CTNZumoNotificationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTNZumoNotificationProvider.h; path = ../../../../src/ios/CTNZumoNotificationProvider.h; sourceTree = "<group>"; };
+		1EB3A8CF1D479148007BE61C /* CTNZumoNotificationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTNZumoNotificationProvider.m; path = ../../../../src/ios/CTNZumoNotificationProvider.m; sourceTree = "<group>"; };
+		1EB3A8D01D479148007BE61C /* HTTPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPConstants.h; path = ../../../../src/ios/HTTPConstants.h; sourceTree = "<group>"; };
+		1EB3A8D11D479148007BE61C /* HTTPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPConstants.m; path = ../../../../src/ios/HTTPConstants.m; sourceTree = "<group>"; };
+		1EB3A8D31D479148007BE61C /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftAzureMobile.framework; path = ../../../src/ios/MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		1EB3A8D41D479148007BE61C /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+JSON.h"; path = "../../../../src/ios/NSDictionary+JSON.h"; sourceTree = "<group>"; };
+		1EB3A8D51D479148007BE61C /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSON.m"; path = "../../../../src/ios/NSDictionary+JSON.m"; sourceTree = "<group>"; };
+		1EB3A8D61D479148007BE61C /* SQLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLDatabase.h; path = ../../../../src/ios/SQLDatabase.h; sourceTree = "<group>"; };
+		1EB3A8D71D479148007BE61C /* SQLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLDatabase.m; path = ../../../../src/ios/SQLDatabase.m; sourceTree = "<group>"; };
+		1EB3A8D81D479148007BE61C /* SQLStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLStatement.h; path = ../../../../src/ios/SQLStatement.h; sourceTree = "<group>"; };
+		1EB3A8D91D479148007BE61C /* SQLStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLStatement.m; path = ../../../../src/ios/SQLStatement.m; sourceTree = "<group>"; };
+		1EB3A8DA1D479148007BE61C /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = ../../../../src/ios/ZipArchive.h; sourceTree = "<group>"; };
+		1EB3A9121D479A8A007BE61C /* CDVFile-Wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CDVFile-Wrapper.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EB3A8781D479111007BE61C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB3A9011D479148007BE61C /* MicrosoftAzureMobile.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EB3A8721D479111007BE61C = {
+			isa = PBXGroup;
+			children = (
+				1EB3A9051D479152007BE61C /* Frameworks */,
+				1EB3A87D1D479111007BE61C /* messaging */,
+				1EB3A87C1D479111007BE61C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1EB3A87C1D479111007BE61C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3A87B1D479111007BE61C /* libmessaging.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EB3A87D1D479111007BE61C /* messaging */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3A8871D479148007BE61C /* CTConsoleLogDestination.h */,
+				1EB3A8881D479148007BE61C /* CTConsoleLogDestination.m */,
+				1EB3A8891D479148007BE61C /* CTFileLogDestination.h */,
+				1EB3A88A1D479148007BE61C /* CTFileLogDestination.m */,
+				1EB3A88B1D479148007BE61C /* CTLogDestination.h */,
+				1EB3A88C1D479148007BE61C /* CTLogger.h */,
+				1EB3A88D1D479148007BE61C /* CTLogger.m */,
+				1EB3A88E1D479148007BE61C /* CTLogLevel.h */,
+				1EB3A88F1D479148007BE61C /* CTLogLevel.m */,
+				1EB3A8901D479148007BE61C /* CTLogManager.h */,
+				1EB3A8911D479148007BE61C /* CTLogManager.m */,
+				1EB3A8921D479148007BE61C /* CTLogMessage.h */,
+				1EB3A8931D479148007BE61C /* CTLogMessage.m */,
+				1EB3A8941D479148007BE61C /* CTLogPlugin.h */,
+				1EB3A8951D479148007BE61C /* CTLogPlugin.m */,
+				1EB3A8961D479148007BE61C /* CTNAttachment.h */,
+				1EB3A8971D479148007BE61C /* CTNAttachment.m */,
+				1EB3A8981D479148007BE61C /* CTNAzureConnection.h */,
+				1EB3A8991D479148007BE61C /* CTNAzureConnection.m */,
+				1EB3A89A1D479148007BE61C /* CTNAzureConstants.h */,
+				1EB3A89B1D479148007BE61C /* CTNAzureConstants.m */,
+				1EB3A89C1D479148007BE61C /* CTNAzureMessageReceiver.h */,
+				1EB3A89D1D479148007BE61C /* CTNAzureMessageReceiver.m */,
+				1EB3A89E1D479148007BE61C /* CTNAzureMessageSender.h */,
+				1EB3A89F1D479148007BE61C /* CTNAzureMessageSender.m */,
+				1EB3A8A01D479148007BE61C /* CTNAzureNotificationPlugin.h */,
+				1EB3A8A11D479148007BE61C /* CTNAzureNotificationPlugin.m */,
+				1EB3A8A21D479148007BE61C /* CTNAzureNotificationProvider.h */,
+				1EB3A8A31D479148007BE61C /* CTNAzureNotificationProvider.m */,
+				1EB3A8A41D479148007BE61C /* CTNAzureStorageBlobAttachment.h */,
+				1EB3A8A51D479148007BE61C /* CTNAzureStorageBlobAttachment.m */,
+				1EB3A8A61D479148007BE61C /* CTNAzureStorageBlobReference.h */,
+				1EB3A8A71D479148007BE61C /* CTNAzureStorageBlobReference.m */,
+				1EB3A8A81D479148007BE61C /* CTNConstants.h */,
+				1EB3A8A91D479148007BE61C /* CTNConstants.m */,
+				1EB3A8AA1D479148007BE61C /* CTNContent.h */,
+				1EB3A8AB1D479148007BE61C /* CTNContent.m */,
+				1EB3A8AC1D479148007BE61C /* CTNContentReference.h */,
+				1EB3A8AD1D479148007BE61C /* CTNContentReference.m */,
+				1EB3A8AE1D479148007BE61C /* CTNFileReference.h */,
+				1EB3A8AF1D479148007BE61C /* CTNFileReference.m */,
+				1EB3A8B01D479148007BE61C /* CTNMessage.h */,
+				1EB3A8B11D479148007BE61C /* CTNMessage.m */,
+				1EB3A8B21D479148007BE61C /* CTNMessageConnector.h */,
+				1EB3A8B31D479148007BE61C /* CTNMessageConnector.m */,
+				1EB3A8B41D479148007BE61C /* CTNMessageReceiver.h */,
+				1EB3A8B51D479148007BE61C /* CTNMessageReceiver.m */,
+				1EB3A8B61D479148007BE61C /* CTNMessageSender.h */,
+				1EB3A8B71D479148007BE61C /* CTNMessageSender.m */,
+				1EB3A8B81D479148007BE61C /* CTNMessageStore.h */,
+				1EB3A8B91D479148007BE61C /* CTNMessageStore.m */,
+				1EB3A8BA1D479148007BE61C /* CTNNotificationPlugin.h */,
+				1EB3A8BB1D479148007BE61C /* CTNNotificationPlugin.m */,
+				1EB3A8BC1D479148007BE61C /* CTNNotificationProvider.h */,
+				1EB3A8BD1D479148007BE61C /* CTNNotificationProvider.m */,
+				1EB3A8BE1D479148007BE61C /* CTNNotificationProviderManager.h */,
+				1EB3A8BF1D479148007BE61C /* CTNNotificationProviderManager.m */,
+				1EB3A8C01D479148007BE61C /* CTNRestMessageSender.h */,
+				1EB3A8C11D479148007BE61C /* CTNRestMessageSender.m */,
+				1EB3A8C21D479148007BE61C /* CTNRestNotificationPlugin.h */,
+				1EB3A8C31D479148007BE61C /* CTNRestNotificationPlugin.m */,
+				1EB3A8C41D479148007BE61C /* CTNRestNotificationProvider.h */,
+				1EB3A8C51D479148007BE61C /* CTNRestNotificationProvider.m */,
+				1EB3A8C61D479148007BE61C /* CTNUtility.h */,
+				1EB3A8C71D479148007BE61C /* CTNUtility.m */,
+				1EB3A8C81D479148007BE61C /* CTNZumoAttachmentUploader.h */,
+				1EB3A8C91D479148007BE61C /* CTNZumoAttachmentUploader.m */,
+				1EB3A8CA1D479148007BE61C /* CTNZumoMessageSender.h */,
+				1EB3A8CB1D479148007BE61C /* CTNZumoMessageSender.m */,
+				1EB3A8CC1D479148007BE61C /* CTNZumoNotificationPlugin.h */,
+				1EB3A8CD1D479148007BE61C /* CTNZumoNotificationPlugin.m */,
+				1EB3A8CE1D479148007BE61C /* CTNZumoNotificationProvider.h */,
+				1EB3A8CF1D479148007BE61C /* CTNZumoNotificationProvider.m */,
+				1EB3A8D01D479148007BE61C /* HTTPConstants.h */,
+				1EB3A8D11D479148007BE61C /* HTTPConstants.m */,
+				1EB3A8D41D479148007BE61C /* NSDictionary+JSON.h */,
+				1EB3A8D51D479148007BE61C /* NSDictionary+JSON.m */,
+				1EB3A8D61D479148007BE61C /* SQLDatabase.h */,
+				1EB3A8D71D479148007BE61C /* SQLDatabase.m */,
+				1EB3A8D81D479148007BE61C /* SQLStatement.h */,
+				1EB3A8D91D479148007BE61C /* SQLStatement.m */,
+				1EB3A8DA1D479148007BE61C /* ZipArchive.h */,
+				1EB3A9121D479A8A007BE61C /* CDVFile-Wrapper.h */,
+			);
+			path = messaging;
+			sourceTree = "<group>";
+		};
+		1EB3A9051D479152007BE61C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3A8D31D479148007BE61C /* MicrosoftAzureMobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EB3A87A1D479111007BE61C /* messaging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EB3A8841D479111007BE61C /* Build configuration list for PBXNativeTarget "messaging" */;
+			buildPhases = (
+				1EB3A8771D479111007BE61C /* Sources */,
+				1EB3A8781D479111007BE61C /* Frameworks */,
+				1EB3A8791D479111007BE61C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = messaging;
+			productName = messaging;
+			productReference = 1EB3A87B1D479111007BE61C /* libmessaging.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EB3A8731D479111007BE61C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = CommonTime;
+				TargetAttributes = {
+					1EB3A87A1D479111007BE61C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 1EB3A8761D479111007BE61C /* Build configuration list for PBXProject "messaging" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1EB3A8721D479111007BE61C;
+			productRefGroup = 1EB3A87C1D479111007BE61C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EB3A87A1D479111007BE61C /* messaging */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EB3A8771D479111007BE61C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB3A8FA1D479148007BE61C /* CTNUtility.m in Sources */,
+				1EB3A8E61D479148007BE61C /* CTNAzureMessageSender.m in Sources */,
+				1EB3A8E21D479148007BE61C /* CTNAttachment.m in Sources */,
+				1EB3A8E41D479148007BE61C /* CTNAzureConstants.m in Sources */,
+				1EB3A9031D479148007BE61C /* SQLDatabase.m in Sources */,
+				1EB3A8DF1D479148007BE61C /* CTLogManager.m in Sources */,
+				1EB3A9041D479148007BE61C /* SQLStatement.m in Sources */,
+				1EB3A8E01D479148007BE61C /* CTLogMessage.m in Sources */,
+				1EB3A8FF1D479148007BE61C /* HTTPConstants.m in Sources */,
+				1EB3A8FD1D479148007BE61C /* CTNZumoNotificationPlugin.m in Sources */,
+				1EB3A8E91D479148007BE61C /* CTNAzureStorageBlobAttachment.m in Sources */,
+				1EB3A8E31D479148007BE61C /* CTNAzureConnection.m in Sources */,
+				1EB3A8DE1D479148007BE61C /* CTLogLevel.m in Sources */,
+				1EB3A8EB1D479148007BE61C /* CTNConstants.m in Sources */,
+				1EB3A8F41D479148007BE61C /* CTNNotificationPlugin.m in Sources */,
+				1EB3A8EF1D479148007BE61C /* CTNMessage.m in Sources */,
+				1EB3A8EA1D479148007BE61C /* CTNAzureStorageBlobReference.m in Sources */,
+				1EB3A8FC1D479148007BE61C /* CTNZumoMessageSender.m in Sources */,
+				1EB3A9021D479148007BE61C /* NSDictionary+JSON.m in Sources */,
+				1EB3A8F01D479148007BE61C /* CTNMessageConnector.m in Sources */,
+				1EB3A8F91D479148007BE61C /* CTNRestNotificationProvider.m in Sources */,
+				1EB3A8E11D479148007BE61C /* CTLogPlugin.m in Sources */,
+				1EB3A8FE1D479148007BE61C /* CTNZumoNotificationProvider.m in Sources */,
+				1EB3A8DC1D479148007BE61C /* CTFileLogDestination.m in Sources */,
+				1EB3A8F51D479148007BE61C /* CTNNotificationProvider.m in Sources */,
+				1EB3A8F71D479148007BE61C /* CTNRestMessageSender.m in Sources */,
+				1EB3A8DB1D479148007BE61C /* CTConsoleLogDestination.m in Sources */,
+				1EB3A8E71D479148007BE61C /* CTNAzureNotificationPlugin.m in Sources */,
+				1EB3A8F21D479148007BE61C /* CTNMessageSender.m in Sources */,
+				1EB3A8E51D479148007BE61C /* CTNAzureMessageReceiver.m in Sources */,
+				1EB3A8EC1D479148007BE61C /* CTNContent.m in Sources */,
+				1EB3A8DD1D479148007BE61C /* CTLogger.m in Sources */,
+				1EB3A8F61D479148007BE61C /* CTNNotificationProviderManager.m in Sources */,
+				1EB3A8F31D479148007BE61C /* CTNMessageStore.m in Sources */,
+				1EB3A8FB1D479148007BE61C /* CTNZumoAttachmentUploader.m in Sources */,
+				1EB3A8F11D479148007BE61C /* CTNMessageReceiver.m in Sources */,
+				1EB3A8EE1D479148007BE61C /* CTNFileReference.m in Sources */,
+				1EB3A8ED1D479148007BE61C /* CTNContentReference.m in Sources */,
+				1EB3A8E81D479148007BE61C /* CTNAzureNotificationProvider.m in Sources */,
+				1EB3A8F81D479148007BE61C /* CTNRestNotificationPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1EB3A8821D479111007BE61C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1EB3A8831D479111007BE61C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1EB3A8851D479111007BE61C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = ../../../src/ios;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"STATIC_LIBRARY=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"cordova-plugin-file",
+					.,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1EB3A8861D479111007BE61C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = ../../../src/ios;
+				GCC_PREPROCESSOR_DEFINITIONS = "STATIC_LIBRARY=1";
+				HEADER_SEARCH_PATHS = (
+					"cordova-plugin-file",
+					.,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EB3A8761D479111007BE61C /* Build configuration list for PBXProject "messaging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EB3A8821D479111007BE61C /* Debug */,
+				1EB3A8831D479111007BE61C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EB3A8841D479111007BE61C /* Build configuration list for PBXNativeTarget "messaging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EB3A8851D479111007BE61C /* Debug */,
+				1EB3A8861D479111007BE61C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EB3A8731D479111007BE61C /* Project object */;
+}

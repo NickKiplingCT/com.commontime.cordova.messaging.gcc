@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+  id="com.commontime.cordova.messaging.gcc"
+  version="0.0.28">
+
+  <name>mDesign Messaging</name>
+  <description>mDesign messaging plugin.</description>
+
+  <engines>
+    <engine name="cordova" version=">=4.1.1"/>
+  </engines>
+
+  <dependency id="cordova-plugin-file"/>
+
+  <js-module src="www/notify.js" name="Notifications">
+    <clobbers target="plugins.notify" />
+  </js-module>
+
+  <js-module src="www/asb.js" name="ASB">
+    <clobbers target="plugins.asb" />
+  </js-module>
+
+  <js-module src="www/rest.js" name="REST">
+    <clobbers target="plugins.rest" />
+  </js-module>
+
+  <js-module src="www/zumo.js" name="ZUMO">
+    <clobbers target="plugins.zumo" />
+  </js-module>
+
+  <js-module src="www/settings.js" name="Settings">
+    <clobbers target="plugins.settings" />
+  </js-module>
+
+  <js-module src="www/log.js" name="Log">
+    <clobbers target="plugins.log" />
+  </js-module>
+
+  <platform name="android">
+
+    <framework src="gradle/build-extras.gradle" custom="true" type="gradleReference" />
+    <framework src="commons-codec:commons-codec:1.9" />
+    <framework src="commons-io:commons-io:2.4" />
+    <framework src="com.android.support:support-v4:21.0.3" />
+    <source-file src="libs/log4j-1.2.16.jar" target-dir="libs" />
+    <source-file src="libs/android-logging-log4j-1.0.2.jar" target-dir="libs" />
+    <framework src="com.microsoft.azure:azure-mobile-android:3.1.0" />
+    <framework src="com.squareup.okhttp3:okhttp:3.3.1" />
+    <framework src="com.microsoft.azure.android:azure-storage-android:0.7.0@aar" />
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.VIBRATE" />
+      <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="com.commontime.mdesign.plugins.notificationsbase.NotificationsService" />
+      <receiver android:name="com.commontime.mdesign.plugins.notificationsbase.SingleCheckReceiver" android:exported="false" />
+      <receiver android:exported="false" android:name="com.commontime.mdesign.plugins.notificationsbase.ConnectivityReceiver">
+		<intent-filter>
+			<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+		</intent-filter>
+      </receiver>
+
+    </config-file>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+	  <feature name="ZUMO">
+        <param name="onload" value="true" />
+        <param name="android-package" value="com.commontime.mdesign.plugins.appservices.ZumoPlugin"/>
+      </feature>
+	  <feature name="REST">
+        <param name="onload" value="true" />
+        <param name="android-package" value="com.commontime.mdesign.plugins.rest.RestPlugin"/>
+      </feature>
+      <feature name="ASB">
+        <param name="onload" value="true" />
+        <param name="android-package" value="com.commontime.mdesign.plugins.asb.ASBPlugin"/>
+      </feature>
+      <feature name="Settings">
+        <param name="onload" value="true" />
+        <param name="android-package" value="com.commontime.mdesign.plugins.base.Settings"/>
+      </feature>
+      <feature name="Log">
+        <param name="android-package" value="com.commontime.mdesign.plugins.base.Log"/>
+      </feature>
+      <feature name="Notify">
+        <param name="onload" value="true" />
+        <param name="android-package" value="com.commontime.mdesign.plugins.notificationsbase.Notify" />
+      </feature>
+    </config-file>
+
+    <resource-file src="values/strings.xml" target="res/values/notificationsbase_strings.xml" />
+    <resource-file src="res/drawable-mdpi/connected36.png" target="res/drawable-mdpi/connected36.png" />
+    <resource-file src="res/drawable-mdpi/connecting36.png" target="res/drawable-mdpi/connecting36.png" />
+    <resource-file src="res/drawable-mdpi/envelope36.png" target="res/drawable-mdpi/envelope36.png" />
+    <resource-file src="res/drawable-mdpi/error36.png" target="res/drawable-mdpi/error36.png" />
+    <resource-file src="res/drawable-mdpi/general36.png" target="res/drawable-mdpi/general36.png" />
+
+    <!-- AppServices -->
+
+    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/AzureStorageCloudManager.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/AzureStorageException.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/AzureStorageUploadTable.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/ZumoBlobFileRefHandler.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/ZumoPlugin.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/ZumoPushSystem.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
+
+    <!-- REST -->
+
+    <source-file src="src/android/com/commontime/mdesign/plugins/rest/RestPlugin.java" target-dir="src/com/commontime/mdesign/plugins/rest/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/rest/RestPushSystem.java" target-dir="src/com/commontime/mdesign/plugins/rest/"/>
+
+    <!-- ASB -->
+
+    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzureMessageBroker.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzureMessageReceiver.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzurePushSystem.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzureQueueBroker.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzureTopicBroker.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/asb/ASBPlugin.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
+
+    <!-- Notifications Base -->
+
+	<source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/ConnectivityReceiver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/MessageChangeObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/MessageReceiveObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/MessageReceiver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/Notifications.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/NotificationsHandler.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/Notify.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/NotificationsService.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/NullPushSystem.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/OutboxChangeObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PopupManager.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushEngine.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushSystem.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushSystemFactory.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushSystemInterface.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushSystemObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/SingleCheckObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/SingleCheckReceiver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
+
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/ContentStore.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/DBInterface.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/FileRefHandler.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/FileRefHandlerInterface.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/NotificationsDB.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/NotificationsDBException.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/PushMessage.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
+
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/exceptions/MDesignConnectionException.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/exceptions/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/exceptions/MDesignServiceException.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/exceptions/"/>
+
+    <!-- Base -->
+
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/ZipUtility.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/Settings.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/CTLog.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/CTLogConfigurator.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/Prefs.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/PartSecurePrefs.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/Utils.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/Files.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/LogCatEncryptedAppender.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/RollingFileEncryptedAppender.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/HttpConnection.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/TestCrashException.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/StatusUpdatePrefs.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/Log.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
+
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/Encryptor.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/EncryptorFactory.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/TripleDES.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/GaryEncryptor.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
+    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/TDESEncryptor.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
+
+  </platform>
+
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="ASB">
+        <param name="onload" value="true" />
+        <param name="ios-package" value="CTNAzureNotificationPlugin"/>
+      </feature>
+	    <feature name="REST">
+        <param name="onload" value="true" />
+        <param name="ios-package" value="CTNRestNotificationPlugin"/>
+      </feature>
+      <feature name="ZUMO">
+        <param name="onload" value="true" />
+        <param name="ios-package" value="CTNZumoNotificationPlugin"/>
+      </feature>
+      <feature name="Log">
+        <param name="onload" value="true" />
+        <param name="ios-package" value="CTLogPlugin"/>
+      </feature>
+      <feature name="Notify">
+        <param name="onload" value="true" />
+        <param name="ios-package" value="CTNNotificationPlugin" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/CTNAzureConnection.h"/>
+    <source-file src="src/ios/CTNAzureConnection.m"/>
+
+    <header-file src="src/ios/CTNAzureConstants.h"/>
+    <source-file src="src/ios/CTNAzureConstants.m"/>
+
+    <header-file src="src/ios/CTNAzureMessageReceiver.h"/>
+    <source-file src="src/ios/CTNAzureMessageReceiver.m"/>
+
+    <header-file src="src/ios/CTNAzureMessageSender.h"/>
+    <source-file src="src/ios/CTNAzureMessageSender.m"/>
+
+    <header-file src="src/ios/CTNAzureNotificationPlugin.h"/>
+    <source-file src="src/ios/CTNAzureNotificationPlugin.m"/>
+
+    <header-file src="src/ios/CTNAzureNotificationProvider.h"/>
+    <source-file src="src/ios/CTNAzureNotificationProvider.m"/>
+
+    <header-file src="src/ios/CTConsoleLogDestination.h"/>
+    <source-file src="src/ios/CTConsoleLogDestination.m"/>
+
+    <header-file src="src/ios/CTFileLogDestination.h"/>
+    <source-file src="src/ios/CTFileLogDestination.m"/>
+
+    <header-file src="src/ios/CTLogDestination.h"/>
+
+    <header-file src="src/ios/CTLogger.h"/>
+    <source-file src="src/ios/CTLogger.m"/>
+
+    <header-file src="src/ios/CTLogLevel.h"/>
+    <source-file src="src/ios/CTLogLevel.m"/>
+
+    <header-file src="src/ios/CTLogManager.h"/>
+    <source-file src="src/ios/CTLogManager.m"/>
+
+    <header-file src="src/ios/CTLogMessage.h"/>
+    <source-file src="src/ios/CTLogMessage.m"/>
+
+    <header-file src="src/ios/CTLogPlugin.h"/>
+    <source-file src="src/ios/CTLogPlugin.m"/>
+
+    <header-file src="src/ios/SQLDatabase.h"/>
+    <source-file src="src/ios/SQLDatabase.m"/>
+
+    <header-file src="src/ios/SQLStatement.h"/>
+    <source-file src="src/ios/SQLStatement.m"/>
+
+    <header-file src="src/ios/ZipArchive.h"/>
+    <source-file src="src/ios/libZipArchive-ios.a" framework="true"/>
+
+    <framework src="libsqlite3.tbd" />
+    <framework src="libz.dylib" />
+
+    <header-file src="src/ios/CTNAttachment.h"/>
+    <source-file src="src/ios/CTNAttachment.m"/>
+
+    <header-file src="src/ios/CTNAzureStorageBlobAttachment.h"/>
+    <source-file src="src/ios/CTNAzureStorageBlobAttachment.m"/>
+
+    <header-file src="src/ios/CTNAzureStorageBlobReference.h"/>
+    <source-file src="src/ios/CTNAzureStorageBlobReference.m"/>
+
+    <header-file src="src/ios/CTNConstants.h"/>
+    <source-file src="src/ios/CTNConstants.m"/>
+
+    <header-file src="src/ios/CTNContent.h"/>
+    <source-file src="src/ios/CTNContent.m"/>
+
+    <header-file src="src/ios/CTNContentReference.h"/>
+    <source-file src="src/ios/CTNContentReference.m"/>
+
+    <header-file src="src/ios/CTNFileReference.h"/>
+    <source-file src="src/ios/CTNFileReference.m"/>
+
+    <header-file src="src/ios/CTNMessage.h"/>
+    <source-file src="src/ios/CTNMessage.m"/>
+
+    <header-file src="src/ios/CTNMessageConnector.h"/>
+    <source-file src="src/ios/CTNMessageConnector.m"/>
+
+    <header-file src="src/ios/CTNNotificationProvider.h"/>
+    <source-file src="src/ios/CTNNotificationProvider.m"/>
+
+    <header-file src="src/ios/CTNNotificationProviderManager.h"/>
+    <source-file src="src/ios/CTNNotificationProviderManager.m"/>
+
+    <header-file src="src/ios/CTNMessageReceiver.h"/>
+    <source-file src="src/ios/CTNMessageReceiver.m"/>
+
+    <header-file src="src/ios/CTNMessageSender.h"/>
+    <source-file src="src/ios/CTNMessageSender.m"/>
+
+    <header-file src="src/ios/CTNMessageStore.h"/>
+    <source-file src="src/ios/CTNMessageStore.m"/>
+
+    <header-file src="src/ios/CTNNotificationPlugin.h"/>
+    <source-file src="src/ios/CTNNotificationPlugin.m"/>
+
+    <header-file src="src/ios/CTNRestMessageSender.h"/>
+    <source-file src="src/ios/CTNRestMessageSender.m"/>
+
+    <header-file src="src/ios/CTNRestNotificationPlugin.h"/>
+    <source-file src="src/ios/CTNRestNotificationPlugin.m"/>
+
+    <header-file src="src/ios/CTNRestNotificationProvider.h"/>
+    <source-file src="src/ios/CTNRestNotificationProvider.m"/>
+
+    <header-file src="src/ios/CTNZumoAttachmentUploader.h"/>
+    <source-file src="src/ios/CTNZumoAttachmentUploader.m"/>
+
+    <header-file src="src/ios/CTNZumoMessageSender.h"/>
+    <source-file src="src/ios/CTNZumoMessageSender.m"/>
+
+    <header-file src="src/ios/CTNZumoNotificationPlugin.h"/>
+    <source-file src="src/ios/CTNZumoNotificationPlugin.m"/>
+
+    <header-file src="src/ios/CTNZumoNotificationProvider.h"/>
+    <source-file src="src/ios/CTNZumoNotificationProvider.m"/>
+
+    <header-file src="src/ios/CTNUtility.h"/>
+    <source-file src="src/ios/CTNUtility.m"/>
+
+    <header-file src="src/ios/HTTPConstants.h"/>
+    <source-file src="src/ios/HTTPConstants.m"/>
+
+    <header-file src="src/ios/NSDictionary+JSON.h"/>
+    <source-file src="src/ios/NSDictionary+JSON.m"/>
+
+    <framework src="src/ios/MicrosoftAzureMobile.framework" custom="true" embed="false"/>
+    <framework src="WebKit.framework"/>
+    <framework src="CoreData.framework"/>
+  </platform>
+
+  <platform name="wp8">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="ASB">
+        <param name="onload" value="true" />
+        <param name="wp-package" value="AzureNotificationPlugin"/>
+      </feature>
+      <feature name="REST">
+        <param name="onload" value="true" />
+        <param name="wp-package" value="RestNotificationPlugin"/>
+      </feature>
+      <feature name="ZUMO">
+        <param name="onload" value="true" />
+        <param name="wp-package" value="ZumoNotificationPlugin"/>
+      </feature>
+      <feature name="Log">
+        <param name="onload" value="true" />
+        <param name="wp-package" value="LogPlugin"/>
+      </feature>
+      <feature name="Notify">
+        <param name="onload" value="true" />
+        <param name="wp-package" value="NotificationPlugin" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/wp8/Attachment.cs"/>
+    <source-file src="src/wp8/AzureConnection.cs"/>
+    <source-file src="src/wp8/AzureNotificationPlugin.cs"/>
+    <source-file src="src/wp8/AzureProvider.cs"/>
+    <source-file src="src/wp8/AzureReceiver.cs"/>
+    <source-file src="src/wp8/AzureSender.cs"/>
+    <source-file src="src/wp8/AzureStorageBlobAttachment.cs"/>
+    <source-file src="src/wp8/AzureStorageBlobReference.cs"/>
+    <source-file src="src/wp8/ContentManager.cs"/>
+    <source-file src="src/wp8/ContentReference.cs"/>
+    <source-file src="src/wp8/DebugLogDestination.cs"/>
+    <source-file src="src/wp8/FileData.cs"/>
+    <source-file src="src/wp8/FileLogDestination.cs"/>
+    <source-file src="src/wp8/FileReference.cs"/>
+    <source-file src="src/wp8/IAzureConnectionHandler.cs"/>
+    <source-file src="src/wp8/ILogDestination.cs"/>
+    <source-file src="src/wp8/IMessage.cs"/>
+    <source-file src="src/wp8/Logger.cs"/>
+    <source-file src="src/wp8/LogLevel.cs"/>
+    <source-file src="src/wp8/LogManager.cs"/>
+    <source-file src="src/wp8/LogPlugin.cs"/>
+    <source-file src="src/wp8/LogUtility.cs"/>
+    <source-file src="src/wp8/Message.cs"/>
+    <source-file src="src/wp8/MessageAction.cs"/>
+    <source-file src="src/wp8/MessageFactory.cs"/>
+    <source-file src="src/wp8/MessageHistoryReceiver.cs"/>
+    <source-file src="src/wp8/MessageLogDestination.cs"/>
+    <source-file src="src/wp8/MessageProvider.cs"/>
+    <source-file src="src/wp8/MessageProviderFactory.cs"/>
+    <source-file src="src/wp8/MessageReceiver.cs"/>
+    <source-file src="src/wp8/MessageSender.cs"/>
+    <source-file src="src/wp8/MessageSendEventArgs.cs"/>
+    <source-file src="src/wp8/MessageStore.cs"/>
+    <source-file src="src/wp8/MessageStoreChangedEventArgs.cs"/>
+    <source-file src="src/wp8/NotificationPlugin.cs"/>
+    <source-file src="src/wp8/Reader.cs"/>
+    <source-file src="src/wp8/RestNotificationPlugin.cs"/>
+    <source-file src="src/wp8/RestProvider.cs"/>
+    <source-file src="src/wp8/RestSender.cs"/>
+    <source-file src="src/wp8/RetryStrategy.cs"/>
+    <source-file src="src/wp8/StoredMessage.cs"/>
+    <source-file src="src/wp8/ZumoAttachmentUploader.cs"/>
+    <source-file src="src/wp8/ZumoAttachmentUploadFailedEventArgs.cs"/>
+    <source-file src="src/wp8/ZumoNotificationPlugin.cs"/>
+    <source-file src="src/wp8/ZumoProvider.cs"/>
+    <source-file src="src/wp8/ZumoSender.cs"/>
+
+    <framework src="src/wp8/Newtonsoft.Json.dll" custom="true" />
+
+    <framework src="src/wp8/Microsoft.WindowsAzure.Mobile.dll" custom="true" />
+    <framework src="src/wp8/Microsoft.WindowsAzure.Mobile.Ext.dll" custom="true" />
+    <framework src="src/wp8/Microsoft.WindowsAzure.Mobile.UI.dll" custom="true" />
+
+    <framework src="src/wp8/System.Net.Http.dll" custom="true" />
+    <framework src="src/wp8/System.Net.Http.Extensions.dll" custom="true" />
+    <framework src="src/wp8/System.Net.Http.Primitives.dll" custom="true" />
+
+  </platform>
+</plugin>
