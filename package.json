@@ -1,6 +1,6 @@
 {
   "name": "@commontimeltd/com.commontime.cordova.messaging.gcc",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "These are the Messaging plugins ported from MD8.",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NickKiplingCT/com.commontime.cordova.messaging.gcc.git"
+    "url": "git+https://github.com/PSO-CommonTime/com.commontime.cordova.messaging.gcc.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NickKiplingCT/com.commontime.cordova.messaging.gcc/issues"
+    "url": "https://github.com/PSO-CommonTime/com.commontime.cordova.messaging.gcc/issues"
   },
-  "homepage": "https://github.com/NickKiplingCT/com.commontime.cordova.messaging.gcc#readme"
+  "homepage": "https://github.com/PSO-CommonTime/com.commontime.cordova.messaging.gcc#readme"
 }

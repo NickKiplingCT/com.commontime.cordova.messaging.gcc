@@ -70,7 +70,14 @@
 
 - (void) clearCredentials
 {
-  [self.client logoutWithCompletion: ^(NSError* error){}];
+  [self.client logoutWithCompletion: ^(NSError* error){
+    NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    
+    for (NSHTTPCookie* cookie in [cookieStorage cookies])
+    {
+      [cookieStorage deleteCookie: cookie];
+    }
+  }];
 }
 
 - (CTNMessageSender*) messageSenderForMessage: (CTNMessage*) message

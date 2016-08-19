@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteException;
 import android.os.CountDownTimer;
 import android.os.Messenger;
 
+import com.commontime.mdesign.plugins.appservices.ZumoPushSystem;
 import com.commontime.mdesign.plugins.base.CTLog;
 import com.commontime.mdesign.plugins.base.Prefs;
 import com.commontime.mdesign.plugins.notificationsbase.db.NotificationsDB;
@@ -771,5 +772,9 @@ public class PushEngine implements PushSystemObserver {
 
 	public void setContext(Context context) {
 		this.context = context;
+	}
+
+	public void zumoLogOut(boolean clearCookies) {
+		((ZumoPushSystem)getSystem(ZumoPushSystem.AZURE_APP_SERVICES)).logout(clearCookies);
 	}
 }

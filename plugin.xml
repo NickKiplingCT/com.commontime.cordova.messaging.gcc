@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-  id="com.commontime.cordova.messaging.gcc"
-  version="0.0.32">
+  id="com.commontime.mdesign.legacy.messaging.gcc"
+  version="0.0.33">
 
   <name>mDesign Messaging</name>
   <description>mDesign messaging plugin.</description>
@@ -42,11 +42,13 @@
     <framework src="commons-codec:commons-codec:1.9" />
     <framework src="commons-io:commons-io:2.4" />
     <framework src="com.android.support:support-v4:21.0.3" />
-    <source-file src="libs/log4j-1.2.16.jar" target-dir="libs" />
-    <source-file src="libs/android-logging-log4j-1.0.2.jar" target-dir="libs" />
+	<framework src="de.mindpipe.android:android-logging-log4j:1.0.3" />
+    <framework src="log4j:log4j:1.2.17-atlassian-1" />
     <framework src="com.microsoft.azure:azure-mobile-android:3.1.0" />
     <framework src="com.squareup.okhttp3:okhttp:3.3.1" />
     <framework src="com.microsoft.azure.android:azure-storage-android:0.7.0@aar" />
+
+	<framework src="library-projects/android/messaging" custom="true" />
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.INTERNET" />
@@ -91,92 +93,7 @@
         <param name="android-package" value="com.commontime.mdesign.plugins.notificationsbase.Notify" />
       </feature>
     </config-file>
-
-    <resource-file src="values/strings.xml" target="res/values/notificationsbase_strings.xml" />
-    <resource-file src="res/drawable-mdpi/connected36.png" target="res/drawable-mdpi/connected36.png" />
-    <resource-file src="res/drawable-mdpi/connecting36.png" target="res/drawable-mdpi/connecting36.png" />
-    <resource-file src="res/drawable-mdpi/envelope36.png" target="res/drawable-mdpi/envelope36.png" />
-    <resource-file src="res/drawable-mdpi/error36.png" target="res/drawable-mdpi/error36.png" />
-    <resource-file src="res/drawable-mdpi/general36.png" target="res/drawable-mdpi/general36.png" />
-
-    <!-- AppServices -->
-
-    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/AzureStorageCloudManager.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/AzureStorageException.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/AzureStorageUploadTable.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/ZumoBlobFileRefHandler.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/ZumoPlugin.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/appservices/ZumoPushSystem.java" target-dir="src/com/commontime/mdesign/plugins/appservices/"/>
-
-    <!-- REST -->
-
-    <source-file src="src/android/com/commontime/mdesign/plugins/rest/RestPlugin.java" target-dir="src/com/commontime/mdesign/plugins/rest/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/rest/RestPushSystem.java" target-dir="src/com/commontime/mdesign/plugins/rest/"/>
-
-    <!-- ASB -->
-
-    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzureMessageBroker.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzureMessageReceiver.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzurePushSystem.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzureQueueBroker.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/asb/AzureTopicBroker.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/asb/ASBPlugin.java" target-dir="src/com/commontime/mdesign/plugins/asb/"/>
-
-    <!-- Notifications Base -->
-
-	<source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/ConnectivityReceiver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/MessageChangeObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/MessageReceiveObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/MessageReceiver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/Notifications.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/NotificationsHandler.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/Notify.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/NotificationsService.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/NullPushSystem.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/OutboxChangeObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PopupManager.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushEngine.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushSystem.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushSystemFactory.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushSystemInterface.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/PushSystemObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/SingleCheckObserver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/SingleCheckReceiver.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/"/>
-
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/ContentStore.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/DBInterface.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/FileRefHandler.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/FileRefHandlerInterface.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/NotificationsDB.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/NotificationsDBException.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/db/PushMessage.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/db/"/>
-
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/exceptions/MDesignConnectionException.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/exceptions/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/notificationsbase/exceptions/MDesignServiceException.java" target-dir="src/com/commontime/mdesign/plugins/notificationsbase/exceptions/"/>
-
-    <!-- Base -->
-
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/ZipUtility.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/Settings.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/CTLog.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/CTLogConfigurator.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/Prefs.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/PartSecurePrefs.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/Utils.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/Files.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/LogCatEncryptedAppender.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/RollingFileEncryptedAppender.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/HttpConnection.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/TestCrashException.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/StatusUpdatePrefs.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/Log.java" target-dir="src/com/commontime/mdesign/plugins/base/"/>
-
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/Encryptor.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/EncryptorFactory.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/TripleDES.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/GaryEncryptor.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
-    <source-file src="src/android/com/commontime/mdesign/plugins/base/crypto/TDESEncryptor.java" target-dir="src/com/commontime/mdesign/plugins/base/crypto/"/>
-
+   
   </platform>
 
   <platform name="ios">

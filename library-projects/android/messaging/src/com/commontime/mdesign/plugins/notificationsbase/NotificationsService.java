@@ -52,6 +52,10 @@ public class NotificationsService extends Service {
 		getPushEngine().setContext(context != null ? context : this);
 	}
 
+	public void zumoLogOut(boolean clearCookies) {
+		engine.zumoLogOut(clearCookies);
+	}
+
 	public class LocalBinder extends Binder {
 		public NotificationsService getService() {
 			return NotificationsService.this;

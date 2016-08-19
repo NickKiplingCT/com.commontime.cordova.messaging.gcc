@@ -1,7 +1,10 @@
 package com.commontime.mdesign.plugins.appservices;
 
+import android.os.Build;
 import android.os.SystemClock;
 import android.util.Pair;
+import android.webkit.CookieManager;
+import android.webkit.ValueCallback;
 
 import com.commontime.mdesign.plugins.base.CTLog;
 import com.commontime.mdesign.plugins.base.Prefs;
@@ -756,10 +759,23 @@ public class ZumoPushSystem extends PushSystem implements MessageReceiveObserver
 		//}
 	}
 
-	public void logout() {
+	public void logout(boolean clearCookies) {
+		if( mobileServicesClient != null )
+			mobileServicesClient.logout();
 		Prefs.get().edit().putString(ZUMO_USER_ID, "").commit();
 		Prefs.get().edit().putString(ZUMO_USER_TOKEN, "").commit();
 		setUser("", "");
+		if(clearCookies) {
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+				CookieManager.getInstance().removeAllCookies(new ValueCallback<Boolean>() {
+                    @Override
+                    public void onReceiveValue(Boolean value) {
+                    }
+                });
+			} else {
+				CookieManager.getInstance().removeAllCookie();
+			}
+		}
 	}
 
 	public AzureStorageUploadTable getUploadTable() {

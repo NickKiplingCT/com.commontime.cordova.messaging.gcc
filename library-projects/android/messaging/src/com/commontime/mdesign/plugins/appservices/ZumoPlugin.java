@@ -32,6 +32,8 @@ public class ZumoPlugin extends CordovaPlugin {
     static private final String AUTHENTICATION_METHOD = "authenticationMethod";
     static private final String URL = "url";
     static final String ZUMO_CONFIGURED = "zumoConfigured";
+    private static final String LOGOUT = "logout";
+    private static final String START = "start";
 
     private NotificationsService mBoundService;
 
@@ -75,7 +77,7 @@ public class ZumoPlugin extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
         // Action dispatch
-        if (action.equals("start")) {
+        if (action.equals(START)) {
             JSONObject options = args.optJSONObject(0);
 
             if( options != null ) {
@@ -96,6 +98,15 @@ public class ZumoPlugin extends CordovaPlugin {
             Prefs.get().edit().putBoolean(ZUMO_CONFIGURED, true).commit();
 
             callbackContext.success();
+            return true;
+        }
+        if (action.equals(LOGOUT)) {
+            if( mBoundService != null) {
+                mBoundService.zumoLogOut(true);
+                callbackContext.success();
+            } else {
+                callbackContext.error("No service");
+            }
             return true;
         }
 
