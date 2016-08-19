@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
   id="com.commontime.cordova.messaging.gcc"
-  version="0.0.33">
+  version="0.0.34">
 
   <name>mDesign Messaging</name>
   <description>mDesign messaging plugin.</description>

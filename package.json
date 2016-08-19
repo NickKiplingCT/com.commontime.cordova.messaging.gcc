@@ -1,6 +1,6 @@
 {
   "name": "@commontimeltd/com.commontime.cordova.messaging.gcc",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "These are the Messaging plugins ported from MD8.",
   "main": "index.js",
   "scripts": {
